@@ -8,9 +8,9 @@ I have used facebook javascript sdk to connect to facebook app. You can read doc
 
 replace "username" and "password" with the credentials of your database in following files:
 
-cheatupdate.php
-madvsmath.php
-showFriendsRank.php
-updatescore.php
-varitest.php
+cheatupdate.php,
+madvsmath.php,
+showFriendsRank.php,
+updatescore.php,
+varitest.php,
 varun.php

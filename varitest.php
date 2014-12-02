@@ -1,6 +1,7 @@
 <?php
  if (isset($_REQUEST["yourid"])) { 
-$con = mysqli_connect("localhost","username","password","mastermathtest");//host,username,password,database
+include 'config.php';
+$con = mysqli_connect($host,$username,$password,$database); //host,username,password,database	
 if (mysqli_connect_errno($con)) {
   echo"conn prob: " . mysqli_connect_error($con);
 }

@@ -7,7 +7,8 @@
 $result="no output";
 if (isset($_REQUEST["data"])) { //check received data
 
-$con = mysqli_connect("localhost","username","password","mastermathtest"); //host,username,password,database	   
+include 'config.php';
+$con = mysqli_connect($host,$username,$password,$database); //host,username,password,database	   
 if (mysqli_connect_errno($con)) {
   $result = "conn prob in first db: " . mysqli_connect_error($con);
 }
@@ -26,7 +27,7 @@ $userid = substr($dataString,0,$pos);
 $dataString = chop($dataString,"%%%");
 $dataString = str_replace("%%%", "','", $dataString);
 $dataString = "'".$dataString."'";
-$queryString = "select fbid,fname,maxscore from mastermathtest.bande where fbid IN(".$dataString.") ORDER BY maxscore DESC LIMIT 6";
+$queryString = "select fbid,fname,maxscore from bande where fbid IN(".$dataString.") ORDER BY maxscore DESC LIMIT 6";
 $query = mysqli_query($con,$queryString);
 if($query)
 {

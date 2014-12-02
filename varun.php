@@ -8,7 +8,8 @@ ob_start();  // to ON header (location)
    if (isset($_REQUEST["userid"])) { //check received data    
 	   
  	   // Create connection
-$con =  mysqli_connect("localhost","username","password","mastermathtest");//host,username,password,database
+include 'config.php';
+$con = mysqli_connect($host,$username,$password,$database); //host,username,password,database	
 	   
 if (mysqli_connect_errno($con)) {
   $result = "conn prob: " . mysqli_connect_error($con);
@@ -25,8 +26,8 @@ if (!isset($_REQUEST["userid"]))
 {
 $email = NULL;
 }
-//if(mysqli_query($con,"INSERT INTO  mastermathtest.bande( fbid , fname, lname, gender, email, candies, maxscore, country, maxlevel) VALUES ( '$userid' , '$first_name', '$last_name, '$sex', '$email', '0', '0','$country','0'  )"))
-if(mysqli_query($con,"INSERT INTO  mastermathtest.bande( fbid , fname, lname, gender, email, candies, maxscore, maxlevel) VALUES ( '$userid' , '$first_name', '$last_name', '$sex', '$email', '0', '0','0'  )"))
+//if(mysqli_query($con,"INSERT INTO  mastermath.bande( fbid , fname, lname, gender, email, candies, maxscore, country, maxlevel) VALUES ( '$userid' , '$first_name', '$last_name, '$sex', '$email', '0', '0','$country','0'  )"))
+if(mysqli_query($con,"INSERT INTO  mastermath.bande( fbid , fname, lname, gender, email, candies, maxscore, maxlevel) VALUES ( '$userid' , '$first_name', '$last_name', '$sex', '$email', '0', '0','0'  )"))
 {
 $data = "welcome first time user";
 }
@@ -34,7 +35,7 @@ else if(mysqli_errno($con) == 1062) {
 
 //$data = "Welcome back ";
 
-  $result = mysqli_query($con,"SELECT fbid,candies,maxscore FROM mastermathtest.bande WHERE fbid='$userid'");
+  $result = mysqli_query($con,"SELECT fbid,candies,maxscore FROM mastermath.bande WHERE fbid='$userid'");
  //if(mysqli_query($result))
  //{
   while($row = mysqli_fetch_array($result)) {

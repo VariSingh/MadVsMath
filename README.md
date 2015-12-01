@@ -1,6 +1,8 @@
 MadVsMath
 =========
 
+Note:-This game has been discontinued from facebook RIP #MadVsMath
+
 Fun mathematics game that will turn you mad. Well not literally.
 
 you can play the game at https://apps.facebook.com/madvsmath/
